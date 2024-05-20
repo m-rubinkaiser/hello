@@ -1,4 +1,4 @@
-package main
+package handler
 
 import (
 	"encoding/json"
@@ -15,7 +15,7 @@ func Hello(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(greet)
 }
 
-func main() {
+func Handler() {
 	http.HandleFunc("/", Hello)
 	log.Fatal(http.ListenAndServe("127.0.0.1:3000", nil))
 }
